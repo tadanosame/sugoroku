@@ -61,6 +61,7 @@ main() {
 	int i;
 	int d;
 	int players_setting;
+	int players_number;
 	FILE* fp;
 	EVENT event[50];
 
@@ -69,50 +70,74 @@ main() {
 
 	for (i = 0; i < E_NUM; i++) {
 		fscanf(fp, "%d %s %d", &event[i].num, event[i].station_name, &event[i].f_flag);
-
 	}
 
-	/*ゲーム開始(プレイ設定)*/
+	/*ゲームプレイ設定*/
 	printf("このゲームは小田急線を使い、新宿駅から箱根湯本駅まで一番早くたどり着いた人が勝ちのゲームです。\n");
-	printf("1～4人でプレイすることができます。\n");
-	printf("何人でプレイしますか？一人でプレイ(対戦相手としてNPCが追加されます)の場合は1を、複数人でプレイする場合は2を押してください。");
+	printf("1～2人でプレイすることができます。\n");
+	printf("何人でプレイしますか？一人でプレイ(対戦相手にNPCが追加されます)の場合は1を、二人でプレイする場合は2を押してください。");
 	scanf("%d", &players_setting);
 	printf("\n");
 	if (players_setting == 1) {
-		printf("NPCを追加します。(合計4人)\n");
+		players_number = 2;
+		printf("NPCを追加しました。\n合計%d人でゲームを開始します。\n",players_number);
+		/*NPCプレイ(2人)*/
+		d = 1;
+		while (1) {
+			d = d + rand() % 6 + 1;
+			if (d >= 50) {
+				break;
+			}
+			printf("ただいまは%s\n", event[d].station_name);
+			printf("%d\n", event[d].f_flag);
 
+			switch (event[d].f_flag) {
+			case 1:
+				event01();
+				break;
+			case 4:
+				event04();
+				break;
+			default:
+				printf("何もなかった\n");
+			}
+
+			getchar();
+
+		}
+		printf("箱根到着！");
 	}
-	else if (players_setting == 2){
-		printf("合計で何人のプレイヤーか入力してください。\n");
+	else if (players_setting == 2) {
+			players_number = 2;
+			printf("合計%d人でゲームを開始します。\n",players_number);
+			/*対人プレイ(2人)*/
+			d = 1;
+			while (1) {
+				d = d + rand() % 6 + 1;
+				if (d >= 50) {
+					break;
+				}
+				printf("ただいまは%s\n", event[d].station_name);
+				printf("%d\n", event[d].f_flag);
+
+				switch (event[d].f_flag) {
+				case 1:
+					event01();
+					break;
+				case 4:
+					event04();
+					break;
+				default:
+					printf("何もなかった\n");
+				}
+
+				getchar();
+
+			}
+			printf("箱根到着！");
 	}
 	else {
 		printf("ちゃんと文読んでください。\n");
 		exit(0);
 	}
-
-	d = 1;
-	while (1) {
-		d = d + rand() % 6 + 1;
-		if (d >= 50) {
-			break;
-		}
-		printf("ただいまは%s\n", event[d].station_name);
-		printf("%d\n", event[d].f_flag);
-
-		switch (event[d].f_flag) {
-		case 1:
-			event01();
-			break;
-		case 4:
-			event04();
-			break;
-		default:
-			printf("何もなかった\n");
-		}
-
-		getchar();
-
-	}
-	printf("箱根到着！");
-
 }

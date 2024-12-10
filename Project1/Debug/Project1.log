@@ -1,5 +1,6 @@
 ﻿  main.c
-E:\salesioooooo\プロ基礎3_後期\sugoroku\Project1\Project1\main.c(68,7): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-E:\salesioooooo\プロ基礎3_後期\sugoroku\Project1\Project1\main.c(71,3): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\salesioooooo\プロ基礎3_後期\sugoroku\Project1\Project1\main.c(69,7): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\salesioooooo\プロ基礎3_後期\sugoroku\Project1\Project1\main.c(72,3): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 E:\salesioooooo\プロ基礎3_後期\sugoroku\Project1\Project1\main.c(79,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\salesioooooo\プロ基礎3_後期\sugoroku\Project1\Project1\main.c(87,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   Project1.vcxproj -> E:\salesioooooo\プロ基礎3_後期\sugoroku\Project1\Debug\Project1.exe
